@@ -6,6 +6,7 @@ public class moving : MonoBehaviour {
 
     public float Speed;
     public bool boost;
+    public float slowness = 0.5f;
 
     private Rigidbody2D body;
     private Vector2 up;
@@ -30,6 +31,7 @@ public class moving : MonoBehaviour {
         }
         if (boost && boosted)
         {
+            currentSpeed = Speed;
             if (Time.time - boostTime <= 2)
                 currentSpeed *= 1.003f;
             else if (Time.time - boostTime < 5)
@@ -44,4 +46,10 @@ public class moving : MonoBehaviour {
 
         body.velocity = up * currentSpeed;
 	}
+
+    public void SlowDown()
+    {
+        currentSpeed -= slowness;
+    }
+
 }

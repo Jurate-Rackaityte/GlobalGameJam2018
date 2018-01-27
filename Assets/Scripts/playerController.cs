@@ -7,11 +7,15 @@ public class playerController : MonoBehaviour
 
     public float speed;
     public bool boost;
+    public float slowness = 0.5f;
+    public bool inverted = false;
+    public float invertedTime = 10f;
 
     private Rigidbody2D body;
     private bool boosted = false;
     private float boostTime = 0f;
     private float currentSpeed;
+    private float alienTime;
 
     // Use this for initialization
     void Start()
@@ -23,10 +27,17 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        
-        //testin
-        if (Input.GetKey("l"))
-            boost = true;
+
+        if (inverted)
+        {
+            moveHorizontal *= -1;
+            inverted = false;
+            alienTime = Time.time + invertedTime;
+        }
+        if (alienTime > Time.time)
+        {
+            moveHorizontal *= -1;
+        }
 
         if (boost && !boosted)
         {
@@ -35,6 +46,7 @@ public class playerController : MonoBehaviour
         }
         if (boost && boosted)
         {
+            currentSpeed = speed;
             if (Time.time - boostTime <= 2)
                 currentSpeed *= 1.003f;
             else if (Time.time - boostTime < 5)
@@ -48,19 +60,17 @@ public class playerController : MonoBehaviour
         }
         Vector2 movement = new Vector2(moveHorizontal, 1);
         body.velocity = movement * currentSpeed;
-
-
-        //Debug.Log("movement: " + body.velocity + "    " + Time.time + "   " + (Time.time - boostTime));
     }
 
-    void OnTriggerEnter(Collider other)
+    public void SlowDown()
     {
-        Destroy(other.gameObject);
-        Debug.Log("triggered");
+        currentSpeed -= slowness;
     }
 
     public void Evolve()
     {
         //cia kazkas bus
     }
+
+
 }
