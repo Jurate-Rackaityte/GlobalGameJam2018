@@ -1,33 +1,55 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class CompletePlayerController : MonoBehaviour
+public class playerController : MonoBehaviour
 {
 
-    public float speed;             //Floating point variable to store the player's movement speed.
+    public float speed;
+    public bool boost;
 
-    private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
+    private Rigidbody2D body;
+    private bool boosted = false;
+    private float boostTime = 0f;
+    private float currentSpeed;
 
     // Use this for initialization
     void Start()
     {
-        //Get and store a reference to the Rigidbody2D component so that we can access it.
-        rb2d = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
+        currentSpeed = speed;
     }
 
-    //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        //Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = Input.GetAxis("Horizontal");
-
-        //Store the current vertical input in the float moveVertical.
         float moveVertical = Input.GetAxis("Vertical");
 
-        //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        if (Input.GetKey("l"))
+            boost = true;
 
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.AddForce(movement * speed);
+        if (boost && !boosted)
+        {
+            boostTime = Time.time;
+            boosted = true;
+        }
+        if (boost && boosted)
+        {
+            if (Time.time - boostTime <= 2)
+                currentSpeed *= 1.003f;
+            else if (Time.time - boostTime < 5)
+                currentSpeed /= 1.002f;
+            else
+            {
+                boosted = false;
+                boost = false;
+                currentSpeed = speed;
+            }
+        }
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        body.velocity = movement * currentSpeed;
+
+
+        Debug.Log("movement: " + body.velocity + "    " + Time.time + "   " + (Time.time - boostTime));
     }
 }
