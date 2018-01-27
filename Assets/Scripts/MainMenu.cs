@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-   // public AudioClip clickSound;
-
+    // public AudioClip clickSound;
     //public AudioSource source;
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 
     // Update is called once per frame
     void Update () {
@@ -39,7 +38,8 @@ public class MainMenu : MonoBehaviour {
 
     public void Credits()
     {
-       // source.PlayOneShot(clickSound);
+        // source.PlayOneShot(clickSound);
         print("Crediiiiits!!!");
+        SceneManager.LoadScene(2);
     }
 }
