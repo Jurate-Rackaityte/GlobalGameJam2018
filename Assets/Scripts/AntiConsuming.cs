@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Consuming : MonoBehaviour {
+public class AntiConsuming : MonoBehaviour
+{
 
     private GameObject player;
     private GameObject manager;
 
     private void Update()
     {
-        transform.Rotate(Vector3.forward, 100f * Time.deltaTime);
+        transform.Rotate(-Vector3.forward, 100f * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //laikinas efektas
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<playerController>().Evolve();
+        Destroy(player);
 
         manager = GameObject.FindGameObjectWithTag("GameController");
-        manager.GetComponent<gameManager>().AddKebab();
+        Debug.Log("Kebabs were removed");
         Destroy(gameObject);
     }
 }

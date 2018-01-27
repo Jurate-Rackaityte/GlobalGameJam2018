@@ -8,12 +8,10 @@ public class killingSelf : MonoBehaviour {
 
     private float sceneY;
     private GameObject scene;
-    private GameObject[] scenes;
 
     void Start ()
     {
-        scenes = GameObject.FindGameObjectsWithTag("Scene");
-        scene = scenes[0];
+        scene = GameObject.FindGameObjectWithTag("Scene");
     }
 
 	// Update is called once per frame
@@ -22,4 +20,5 @@ public class killingSelf : MonoBehaviour {
         if (sceneY > this.transform.position.y + distance)
             Destroy(gameObject);
     }
+
 }

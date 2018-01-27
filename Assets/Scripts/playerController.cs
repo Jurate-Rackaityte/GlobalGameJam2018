@@ -58,4 +58,9 @@ public class playerController : MonoBehaviour
         Destroy(other.gameObject);
         Debug.Log("triggered");
     }
+
+    public void Evolve()
+    {
+        //cia kazkas bus
+    }
 }

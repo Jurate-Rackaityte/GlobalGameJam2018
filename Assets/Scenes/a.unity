@@ -183,6 +183,47 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 1
+--- !u!1 &573122971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 573122973}
+  - component: {fileID: 573122972}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &573122972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573122971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b70b43bf1d36484a94aaebe52064413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kebabCount: 0
+--- !u!4 &573122973
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573122971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596605705
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +238,7 @@ GameObject:
   - component: {fileID: 596605710}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +275,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &596605708
 Transform:
   m_ObjectHideFlags: 0
@@ -246,7 +287,7 @@ Transform:
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &596605709
 SpriteRenderer:
@@ -427,7 +468,7 @@ Transform:
   - {fileID: 216651340}
   - {fileID: 1031077237}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &928749078
 Rigidbody2D:
@@ -458,8 +499,9 @@ GameObject:
   m_Component:
   - component: {fileID: 978762311}
   - component: {fileID: 978762310}
+  - component: {fileID: 978762312}
   m_Layer: 0
-  m_Name: MeteorSpawner
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,6 +539,23 @@ Transform:
   m_Father: {fileID: 928749077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978762312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 978762309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7645c51687705445bb129e408e3b1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kebab: {fileID: 1811349503811636, guid: 808b58df02bd1aa4b9420247b008556a, type: 2}
+  evilKebab: {fileID: 1636067003679696, guid: a4f235c6f0985a74393cf9a1e553031f, type: 2}
+  Lenght: 25
+  period: 7
+  firstRatio: 1
+  addingRatio: 0.05
 --- !u!1 &1013765403
 GameObject:
   m_ObjectHideFlags: 0
