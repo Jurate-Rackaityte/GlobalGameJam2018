@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e3f2f8ae5e544d94c861451d58197713
+timeCreated: 1517047948
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Millenia
+  fontNames:
+  - Millenia
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

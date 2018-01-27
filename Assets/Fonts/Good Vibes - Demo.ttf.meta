@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 388130a5b238b8e4ba72650fd8698996
+timeCreated: 1517047948
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Good Vibes - Demo
+  fontNames:
+  - Good Vibes - Demo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
