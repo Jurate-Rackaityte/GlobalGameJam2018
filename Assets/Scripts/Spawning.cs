@@ -21,13 +21,11 @@ public class Spawning : MonoBehaviour {
     public float delay = 2f; //in what period of seconds it spawns meteriotes
     public float amount = 0.5f;
     public float intencity = 0.001f;
-    public float OffsetSpeed = 0.1f;
 
     private float Offset = 100f;
     private int OffsetY = 0;
     private float sec;
     private Vector3 position;
-    private float customRand;
     private int chance;
     // Use this for initialization
     void Start () {
@@ -61,9 +59,6 @@ public class Spawning : MonoBehaviour {
 
                     position = new Vector3(transform.position.x + x, transform.position.y, transform.position.z);
                     Instantiate(meteorite, position, Quaternion.identity);
-
-                    //customRand = Random.Range(-1f, 1f);
-                    //meteorite.velocity(); kad is saliu kristu
 
                 }
             }

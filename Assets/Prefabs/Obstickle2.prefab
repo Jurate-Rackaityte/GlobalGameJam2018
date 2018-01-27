@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114548938941541344}
   - component: {fileID: 50313855421026620}
   - component: {fileID: 58414493105130884}
+  - component: {fileID: 114167994000378140}
   m_Layer: 0
   m_Name: Obstickle2
   m_TagString: Untagged
@@ -79,6 +80,18 @@ CircleCollider2D:
   m_Offset: {x: 0.35709143, y: 0}
   serializedVersion: 2
   m_Radius: 13.129485
+--- !u!114 &114167994000378140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606795563480958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d2e8a3e3c2e0c46bc4e4f60d23982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OffsetSpeed: 100
 --- !u!114 &114516368891336088
 MonoBehaviour:
   m_ObjectHideFlags: 1
