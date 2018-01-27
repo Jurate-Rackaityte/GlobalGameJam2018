@@ -558,7 +558,6 @@ MonoBehaviour:
   delay: 0.5
   amount: 0.7
   intencity: 0.001
-  OffsetSpeed: 0.1
 --- !u!4 &978762311
 Transform:
   m_ObjectHideFlags: 0

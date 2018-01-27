@@ -16,12 +16,18 @@ public class playerController : MonoBehaviour
     private float boostTime = 0f;
     private float currentSpeed;
     private float alienTime;
+    private int stage = 1; //evolution stage
+    Animator anim;
+
 
     // Use this for initialization
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         currentSpeed = speed;
+
+       // anim = GetComponent<Animator>();
+
     }
 
     void FixedUpdate()
@@ -69,7 +75,11 @@ public class playerController : MonoBehaviour
 
     public void Evolve()
     {
-        //cia kazkas bus
+        if (stage > 0)
+        {
+            //if (stage == 1)
+
+        }
     }
 
 

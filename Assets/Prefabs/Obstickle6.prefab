@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 114434925341155538}
   - component: {fileID: 50711370306103912}
   - component: {fileID: 60399750722832054}
-  m_Layer: 0
+  - component: {fileID: 114762568823890838}
+  m_Layer: 9
   m_Name: Obstickle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,6 +648,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5df2ea3be465e45bd77cf0236088b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114762568823890838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200230960630632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d2e8a3e3c2e0c46bc4e4f60d23982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OffsetSpeed: 100
 --- !u!212 &212158804212997314
 SpriteRenderer:
   m_ObjectHideFlags: 1

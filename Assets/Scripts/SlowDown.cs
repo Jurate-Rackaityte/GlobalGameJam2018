@@ -15,6 +15,8 @@ public class SlowDown : MonoBehaviour {
         scene = GameObject.FindGameObjectWithTag("Scene");
         scene.GetComponent<moving>().SlowDown();
 
+        Debug.Log("colision " + Time.time + "; " + gameObject);
+
         Destroy(gameObject);
     }
 }
