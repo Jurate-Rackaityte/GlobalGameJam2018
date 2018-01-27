@@ -2,31 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
-{
+public class moving : MonoBehaviour {
 
-    public float speed;
+    public float Speed;
     public bool boost;
 
     private Rigidbody2D body;
-    private bool boosted = false;
-    private float boostTime = 0f;
+    private Vector2 up;
     private float currentSpeed;
+    private bool boosted;
+    private float boostTime;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start () {
         body = GetComponent<Rigidbody2D>();
-        currentSpeed = speed;
+        up.Set(0, 2);
+        currentSpeed = Speed;
     }
-
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        if (Input.GetKey("l"))
-            boost = true;
+	
+	// Update is called once per frame
+	void Update () {
 
         if (boost && !boosted)
         {
@@ -43,13 +38,10 @@ public class playerController : MonoBehaviour
             {
                 boosted = false;
                 boost = false;
-                currentSpeed = speed;
+                currentSpeed = Speed;
             }
         }
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        body.velocity = movement * currentSpeed;
 
-
-        Debug.Log("movement: " + body.velocity + "    " + Time.time + "   " + (Time.time - boostTime));
-    }
+        body.velocity = up * currentSpeed;
+	}
 }
