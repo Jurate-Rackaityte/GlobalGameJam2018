@@ -20,7 +20,7 @@ public class AntiConsuming : MonoBehaviour
         Destroy(player);
 
         manager = GameObject.FindGameObjectWithTag("GameController");
-        Debug.Log("Kebabs were removed");
+    
         Destroy(gameObject);
     }
 }

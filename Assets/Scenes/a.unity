@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kebabCount: 0
+  krakenCount: 100
 --- !u!4 &573122973
 Transform:
   m_ObjectHideFlags: 0
@@ -236,6 +237,7 @@ GameObject:
   - component: {fileID: 596605706}
   - component: {fileID: 596605709}
   - component: {fileID: 596605710}
+  - component: {fileID: 596605711}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -256,6 +258,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   boost: 0
+  slowness: 0.5
+  inverted: 0
+  invertedTime: 10
 --- !u!50 &596605707
 Rigidbody2D:
   serializedVersion: 4
@@ -321,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: -1682799535
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ce6385b94331efe4fbb5326fa0400407, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06e811ade20f5294f9a1728e9c52ea8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -345,7 +350,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 26.239998, y: 38.399998}
+    oldSize: {x: 26.240002, y: 38.399998}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -354,6 +359,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.668484, y: 38.399998}
   m_EdgeRadius: 0
+--- !u!95 &596605711
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596605705}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe135baef0787b8419bda11d7ed08c75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &887439404
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   boost: 0
+  slowness: 0.25
 --- !u!4 &928749077
 Transform:
   m_ObjectHideFlags: 0
@@ -519,13 +542,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorite: {fileID: 1161582187922756, guid: e23d85c70d93b024181ddd229fa2aa1c, type: 2}
-  Lenght: 25
+  meteorite1: {fileID: 1161582187922756, guid: e23d85c70d93b024181ddd229fa2aa1c, type: 2}
+  meteorite2: {fileID: 1634567019879212, guid: 7d2fd94be3b748c419e2543219a7456e, type: 2}
+  meteorite3: {fileID: 1606795563480958, guid: 379ac759252d8bc4eb17d640d86d4d44, type: 2}
+  meteorite4: {fileID: 1509342513161810, guid: 21c3047e17f9bb145858b0d12ed7cf6f, type: 2}
+  meteorite5: {fileID: 1541953784937158, guid: 9b7366a1cb3e2ad488f5d986066ece18, type: 2}
+  meteorite6: {fileID: 1754160714866176, guid: 438d91a9836f251428c87f0df50f01e8, type: 2}
+  meteorite7: {fileID: 1200230960630632, guid: 958b795466d2f0a4f8936614ddb299b8, type: 2}
+  meteorite8: {fileID: 1394803510609390, guid: b439b992ca5bd594fa6f66e8e7ec8464, type: 2}
+  meteorite9: {fileID: 1054087453111248, guid: 172046f7c9475384393fc157aa02d540, type: 2}
+  Lenght: 34
   width: 256
   lenght: 256
   scale: 100
   delay: 0.5
   amount: 0.7
   intencity: 0.001
+  OffsetSpeed: 0.1
 --- !u!4 &978762311
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +566,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978762309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.22, y: 7.05, z: 10}
+  m_LocalPosition: {x: -15.72, y: 7.05, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928749077}
@@ -724,6 +757,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrder: 1
   sortingLayerName: Background
+--- !u!114 &1714728692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714728687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039883f102c20e747b2efaadc0bad80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1917792591
 Prefab:
   m_ObjectHideFlags: 0
@@ -766,6 +810,10 @@ Prefab:
     - target: {fileID: 1047154238131468, guid: 2e23badfd67c9c34aba9816f5e53d96f, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047154238131468, guid: 2e23badfd67c9c34aba9816f5e53d96f, type: 2}
+      propertyPath: m_TagString
+      value: stars
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e23badfd67c9c34aba9816f5e53d96f, type: 2}

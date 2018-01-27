@@ -6,6 +6,8 @@ public class Consuming : MonoBehaviour {
 
     private GameObject player;
     private GameObject manager;
+    private GameObject scene;
+    private GameObject stars;
 
     private void Update()
     {
@@ -16,9 +18,17 @@ public class Consuming : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<playerController>().Evolve();
+        player.GetComponent<playerController>().boost = true;
+
+        scene = GameObject.FindGameObjectWithTag("Scene");
+        scene.GetComponent<moving>().boost = true;
 
         manager = GameObject.FindGameObjectWithTag("GameController");
         manager.GetComponent<gameManager>().AddKebab();
+
+        stars = GameObject.FindGameObjectWithTag("stars");
+        //stars.GetComponent
+
         Destroy(gameObject);
     }
 }
