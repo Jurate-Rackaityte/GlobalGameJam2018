@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour {
     {
        // source.PlayOneShot(clickSound);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     public void Exit()
