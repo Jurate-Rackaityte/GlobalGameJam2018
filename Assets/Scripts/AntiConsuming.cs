@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AntiConsuming : MonoBehaviour
 {
@@ -15,12 +16,6 @@ public class AntiConsuming : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //laikinas efektas
-        player = GameObject.FindGameObjectWithTag("Player");
-        Destroy(player);
-
-        manager = GameObject.FindGameObjectWithTag("GameController");
-    
-        Destroy(gameObject);
+        SceneManager.LoadScene(6);
     }
 }

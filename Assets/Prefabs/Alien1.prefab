@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114677932008182182}
   - component: {fileID: 114349999412700516}
   - component: {fileID: 60623685321673688}
+  - component: {fileID: 114719477168707652}
+  - component: {fileID: 50023551324646452}
   m_Layer: 9
   m_Name: Alien1
   m_TagString: Untagged
@@ -43,6 +45,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50023551324646452
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109642656365682}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &60623685321673688
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -368,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1823e41315f3043a9bea5443f2549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 20
+  distance: 15
 --- !u!114 &114677932008182182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,6 +402,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcca5088c39262e4f83b3b4b0c26f1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114719477168707652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109642656365682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d2e8a3e3c2e0c46bc4e4f60d23982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OffsetSpeed: 70
 --- !u!212 &212677851443436810
 SpriteRenderer:
   m_ObjectHideFlags: 1
