@@ -22,6 +22,7 @@ public class playerController : MonoBehaviour
     private float currentSpeed;
     private float alienTime;
     private int stage = 1; //evolution stage
+    private float totalTime;
     Animator anim;
 
     // Use this for initialization
@@ -86,6 +87,16 @@ public class playerController : MonoBehaviour
                 currentSpeed = speed;
             }
         }
+
+        //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    totalTime = Time.deltaTime * moveHorizontal; // this will increase the totalTime as long as you hold down "whatever" key }
+        //}
+        //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    totalTime = 0f; //this just resets the totaltime on the keyup 
+        //}
+
         Vector2 movement = new Vector2(moveHorizontal, 1);
         body.velocity = movement * currentSpeed;
     }
