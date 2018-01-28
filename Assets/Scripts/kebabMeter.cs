@@ -27,17 +27,17 @@ public class kebabMeter : MonoBehaviour {
         if (kebabAmount > oldAmount)
         {
             if (kebabAmount == 1)
-                kebab1.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             if (kebabAmount == 2)
-                kebab2.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             if (kebabAmount == 3)
-                kebab3.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             if (kebabAmount == 4)
-                kebab4.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab4.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             if (kebabAmount == 5)
-                kebab5.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab5.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             if (kebabAmount == 6)
-                kebab6.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
+                kebab6.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             oldAmount++;
         }
 	}

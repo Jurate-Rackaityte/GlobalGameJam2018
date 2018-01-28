@@ -540,15 +540,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2046212583}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4916950431108508, guid: cbe78d1b2ca25b7469717c1e0d1f2b30, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.6199958
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4916950431108508, guid: cbe78d1b2ca25b7469717c1e0d1f2b30, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.41
+      value: -5.3909945
       objectReference: {fileID: 0}
     - target: {fileID: 4916950431108508, guid: cbe78d1b2ca25b7469717c1e0d1f2b30, type: 2}
       propertyPath: m_LocalPosition.z
@@ -572,16 +572,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4916950431108508, guid: cbe78d1b2ca25b7469717c1e0d1f2b30, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe78d1b2ca25b7469717c1e0d1f2b30, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &601919834 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4916950431108508, guid: cbe78d1b2ca25b7469717c1e0d1f2b30,
-    type: 2}
-  m_PrefabInternal: {fileID: 601919833}
 --- !u!1 &986187294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,12 +1032,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224782319704666244, guid: 8e3f7fd3430b8f346a4fa6056c4c3b75,
     type: 2}
   m_PrefabInternal: {fileID: 182442438}
---- !u!114 &1436638952 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114445169718490340, guid: 8e3f7fd3430b8f346a4fa6056c4c3b75,
-    type: 2}
-  m_PrefabInternal: {fileID: 182442438}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!95 &1436638953
 Animator:
   serializedVersion: 3
@@ -1176,12 +1165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6d586c2d95aa54581e930c504cde33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animPlay: {fileID: 0}
-  animCredits: {fileID: 0}
-  animExit: {fileID: 0}
-  playB: {fileID: 1436638952}
-  creditsB: {fileID: 1258019249}
-  exitB: {fileID: 1095836382}
 --- !u!4 &1630170116
 Transform:
   m_ObjectHideFlags: 0
@@ -1362,7 +1345,6 @@ Transform:
   - {fileID: 248377623}
   - {fileID: 1686590118}
   - {fileID: 151736551}
-  - {fileID: 601919834}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -35,7 +35,7 @@ public class Spawning : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (sec < Time.time)
+        if (sec < Time.timeSinceLevelLoad)
         {
             //padidinu intensyvuma spawninimo
             amount -= intencity;

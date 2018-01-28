@@ -35,7 +35,7 @@ public class gameManager : MonoBehaviour {
                 SceneManager.LoadScene(5);
             else SceneManager.LoadScene(7);
         }
-            
+        Debug.Log("timeris: " + Time.time + "; kitas: " + Time.timeSinceLevelLoad);
     }
 
 }

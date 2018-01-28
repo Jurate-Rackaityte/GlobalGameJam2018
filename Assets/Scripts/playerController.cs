@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -12,9 +13,8 @@ public class playerController : MonoBehaviour
     public float invertedTime = 10f;
     public int character;
     public float barrier = 10f;
-    public AudioClip edgySong;
-    public AudioClip oppaiSong;
-    public AudioSource audioSource;
+    public Text text;
+    public GameObject timer;
 
     private Rigidbody2D body;
     private bool boosted = false;
@@ -31,14 +31,8 @@ public class playerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         currentSpeed = speed;
         anim = GetComponent<Animator>();
-
         if (character == 1)
-        {
             stage = 1;
-            audioSource.clip = oppaiSong;
-            audioSource.Play();
-            audioSource.loop = true;
-        }  
         else Edgy();
     }
 
@@ -60,13 +54,20 @@ public class playerController : MonoBehaviour
             moveHorizontal *= -1;
             inverted = false;
             alienTime = Time.time + invertedTime;
+            timer.SetActive(true);
+            text.text = Mathf.Round(alienTime - Time.time).ToString();
         }
         if (alienTime > Time.time)
         {
             moveHorizontal *= -1;
+            text.text = Mathf.Round(alienTime - Time.time).ToString();
+        }
+        if (alienTime == Time.time)
+        {
+            timer.SetActive(false);
         }
 
-        if (boost && !boosted)
+            if (boost && !boosted)
         {
             boostTime = Time.time;
             boosted = true;
@@ -97,9 +98,6 @@ public class playerController : MonoBehaviour
     public void Edgy()
     {
         stage = -1;
-        audioSource.clip = edgySong;
-        audioSource.Play();
-        audioSource.loop = true;
         anim.SetBool("edgy1", true);
     }
 
