@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-    // public AudioClip clickSound;
-    //public AudioSource source;
+    public AudioClip clickSound;
+    public AudioSource source;
     // Use this for initialization
     void Start () {
+        source.clip = clickSound;
     }
 
     // Update is called once per frame
@@ -24,22 +25,22 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame()
     {
-       // source.PlayOneShot(clickSound);
-
+        // source.PlayOneShot(clickSound);
+        source.Play();
         SceneManager.LoadScene(3);
     }
 
     public void Exit()
     {
-       // source.PlayOneShot(clickSound);
-        print("Bye bye!");
+        // source.PlayOneShot(clickSound);
+        source.Play();
         Application.Quit();
     }
 
     public void Credits()
     {
+        source.Play();
         // source.PlayOneShot(clickSound);
-        print("Crediiiiits!!!");
         SceneManager.LoadScene(2);
     }
 }
