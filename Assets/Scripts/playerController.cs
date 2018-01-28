@@ -12,6 +12,9 @@ public class playerController : MonoBehaviour
     public float invertedTime = 10f;
     public int character;
     public float barrier = 10f;
+    public AudioClip edgySong;
+    public AudioClip oppaiSong;
+    public AudioSource audioSource;
 
     private Rigidbody2D body;
     private bool boosted = false;
@@ -30,7 +33,12 @@ public class playerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         if (character == 1)
+        {
             stage = 1;
+            audioSource.clip = oppaiSong;
+            audioSource.Play();
+            audioSource.loop = true;
+        }  
         else Edgy();
     }
 
@@ -89,6 +97,9 @@ public class playerController : MonoBehaviour
     public void Edgy()
     {
         stage = -1;
+        audioSource.clip = edgySong;
+        audioSource.Play();
+        audioSource.loop = true;
         anim.SetBool("edgy1", true);
     }
 
