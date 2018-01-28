@@ -711,7 +711,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 153098610
+  randomSeed: 807713741
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4058,8 +4058,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Exit
+      - m_Target: {fileID: 433559183}
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4535,7 +4535,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1622470938
+  randomSeed: -134987167
   InitialModule:
     serializedVersion: 3
     enabled: 1

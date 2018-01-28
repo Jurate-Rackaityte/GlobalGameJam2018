@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         kebabCount = 0;
-	}
+    }
 
     public void AddKebab()
     {

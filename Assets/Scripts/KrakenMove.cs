@@ -20,9 +20,5 @@ public class KrakenMove : MonoBehaviour {
 	void Update () {
         body.velocity = up * Speed;
 
-        if (player.transform.position.y <= this.transform.position.y)
-            Debug.Log("Kraken: ate you!");
-
-
     }
 }
