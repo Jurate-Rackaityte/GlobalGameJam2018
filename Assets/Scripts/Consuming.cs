@@ -7,7 +7,6 @@ public class Consuming : MonoBehaviour {
     private GameObject player;
     private GameObject manager;
     private GameObject scene;
-    private GameObject stars;
 
     private void Update()
     {
@@ -24,9 +23,6 @@ public class Consuming : MonoBehaviour {
 
         manager = GameObject.FindGameObjectWithTag("GameController");
         manager.GetComponent<gameManager>().AddKebab();
-
-        stars = GameObject.FindGameObjectWithTag("stars");
-        //stars.GetComponent
 
         Destroy(gameObject);
     }

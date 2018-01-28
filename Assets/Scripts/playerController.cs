@@ -11,6 +11,7 @@ public class playerController : MonoBehaviour
     public bool inverted = false;
     public float invertedTime = 10f;
     public int character;
+    public float barrier = 10f;
 
     private Rigidbody2D body;
     private bool boosted = false;
@@ -36,6 +37,15 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
+
+        if (transform.position.x <= -barrier)
+        {
+            transform.position = new Vector2(-barrier, transform.position.y);
+        }
+        else if (transform.position.x >= barrier)
+        {
+            transform.position = new Vector2(barrier, transform.position.y);
+        }
 
         if (inverted)
         {

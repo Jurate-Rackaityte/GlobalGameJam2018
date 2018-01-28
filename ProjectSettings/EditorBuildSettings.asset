@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrapEnding.unity
     guid: c9eae485821d81f48b402a8cc4b3d10d
+  - enabled: 1
+    path: Assets/Scenes/MechaEdgeEnding.unity
+    guid: d0827d77b487edb499cbeb2c996f2032
