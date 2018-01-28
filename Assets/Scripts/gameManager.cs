@@ -19,16 +19,23 @@ public class gameManager : MonoBehaviour {
     public void AddKebab()
     {
         kebabCount++;
-        Debug.Log("kebabai: " + kebabCount);
+        if (kebabCount == 2 || kebabCount == 4)
+            player.GetComponent<playerController>().Evolve();
     }
 
     private void Update()
     {
         krakenDistance = player.transform.position.y - kraken.transform.position.y;
+
         if (krakenDistance <= 0)
             SceneManager.LoadScene(4);
         if (kebabCount >= kebabGoal)
-            SceneManager.LoadScene(5);
+        {
+            if (player.GetComponent<playerController>().character > 0)
+                SceneManager.LoadScene(5);
+            else SceneManager.LoadScene(7);
+        }
+            
     }
 
 }

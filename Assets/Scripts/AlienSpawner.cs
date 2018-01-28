@@ -13,7 +13,7 @@ public class AlienSpawner : MonoBehaviour
     private float position;
     private Vector3 pos;
     private float current;
-    private int chance;
+    private float chance;
     // Use this for initialization
     void Start()
     {
@@ -27,8 +27,8 @@ public class AlienSpawner : MonoBehaviour
         if (current < Time.time)
         {
             pos = new Vector3(transform.position.x + position, transform.position.y, transform.position.z);
-            chance = Random.Range(0, 1);
-            if (chance > 0)
+            chance = Random.Range(0f, 1f);
+            if (chance > 0.5f)
                 Instantiate(alien1, pos, Quaternion.identity);
             else Instantiate(alien2, pos, Quaternion.identity);
             position = Random.Range(0f, Lenght);

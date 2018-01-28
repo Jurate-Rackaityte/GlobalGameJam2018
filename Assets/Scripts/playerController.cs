@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
     public float slowness = 0.5f;
     public bool inverted = false;
     public float invertedTime = 10f;
+    public int character;
 
     private Rigidbody2D body;
     private bool boosted = false;
@@ -19,15 +20,17 @@ public class playerController : MonoBehaviour
     private int stage = 1; //evolution stage
     Animator anim;
 
-
     // Use this for initialization
     void Start()
     {
+        character = PlayerPrefs.GetInt("Char");
         body = GetComponent<Rigidbody2D>();
         currentSpeed = speed;
+        anim = GetComponent<Animator>();
 
-       // anim = GetComponent<Animator>();
-
+        if (character == 1)
+            stage = 1;
+        else Edgy();
     }
 
     void FixedUpdate()
@@ -73,12 +76,40 @@ public class playerController : MonoBehaviour
         currentSpeed -= slowness;
     }
 
+    public void Edgy()
+    {
+        stage = -1;
+        anim.SetBool("edgy1", true);
+    }
+
     public void Evolve()
     {
         if (stage > 0)
         {
-            //if (stage == 1)
+            if (stage == 1)
+            {
+                anim.SetBool("oppai2", true);
+                stage = 2;
+            }
+            else if (stage == 2)
+            {
+                anim.SetBool("oppai3", true);
+                stage = 3;
+            }
 
+        }
+        else if (stage < 0)
+        {
+            if (stage == -1)
+            {
+                anim.SetBool("edgy2", true);
+                stage = -2;
+            }
+            else if (stage == -2)
+            {
+                anim.SetBool("edgy3", true);
+                stage = -3;
+            }
         }
     }
 

@@ -17,7 +17,6 @@ public class Consuming : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision)
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<playerController>().Evolve();
         player.GetComponent<playerController>().boost = true;
 
         scene = GameObject.FindGameObjectWithTag("Scene");
